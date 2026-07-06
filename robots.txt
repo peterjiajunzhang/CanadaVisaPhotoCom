@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://peterjiajunzhang.github.io/CanadaVisaPhotoCom/sitemap.xml
+Sitemap: https://canada.visaphoto1tap.com/sitemap.xml
