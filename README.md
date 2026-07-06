@@ -9,16 +9,15 @@ Live site: **https://canada.visaphoto1tap.com/**
 | `sitemap.xml` / `robots.txt` | SEO |
 | `VisaPhotoApps/Marketing/Canada/xiaohongshu/` | Xiaohongshu post previews & export scripts |
 | `VisaPhotoApps/Marketing/Canada/appstore/` | App Store screenshot campaign previews & export scripts |
-| `screenshots/` | Real device screenshots — **5 of 6 captured** (missing `06-saved-photos.png`) |
+| `screenshots/` | Real device screenshots — **all 6 captured** |
 | `demos/` | Real before/after export pairs — all 6 captured |
 
-**Status:** real screenshots and demo pairs are mostly in. `index.html` has a real `#demos` wall and a real `#app` screenshot grid (currently 5 screens: home, checklist, paywall, exported, languages). **Still needed: `06-saved-photos.png`** (the "All Saved Photos" grid) — drop it into `screenshots/` and add its `<figure>` back into `index.html`'s `#app` grid + the App Store campaign slide that references it. Still pending: Apple ID / App Store Connect record.
+**Status:** all real screenshots and demo pairs are in. `index.html` has a real `#demos` wall and a full 6-screen real `#app` screenshot grid. Still pending: Apple ID / App Store Connect record (CTA still shows "Coming soon").
 
 ## Before submitting to App Store Connect
 
 1. Once `CanadaVisaPhoto/Info.plist`'s `AppStoreAppleID` is filled in, update the hero/footer CTA in `index.html` from "Coming soon" to a real App Store link.
-2. Capture `06-saved-photos.png` (see Status above) — the last missing canonical screenshot.
-3. Re-run exports after any new screenshot lands:
+2. Re-run exports after any future screenshot changes:
    ```bash
    cd VisaPhotoApps/Marketing/Canada/appstore && npm run export
    cd VisaPhotoApps/Marketing/Canada/xiaohongshu && npm run export
