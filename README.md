@@ -9,17 +9,20 @@ Live site: **https://canada.visaphoto1tap.com/**
 | `sitemap.xml` / `robots.txt` | SEO |
 | `VisaPhotoApps/Marketing/Canada/xiaohongshu/` | Xiaohongshu post previews & export scripts |
 | `VisaPhotoApps/Marketing/Canada/appstore/` | App Store screenshot campaign previews & export scripts |
-| `screenshots/` | Real device screenshots (473×1024) — **does not exist yet** |
-| `demos/` | Real before/after export examples — **does not exist yet** |
+| `screenshots/` | Real device screenshots — **5 of 6 captured** (missing `06-saved-photos.png`) |
+| `demos/` | Real before/after export pairs — all 6 captured |
 
-**Status:** the iOS app has not shipped yet (no Apple ID, no screenshots, no demo photos). This site, the xiaohongshu deck, and the App Store campaign are all built with illustrated mockups/placeholders standing in for real device screenshots, following the pattern used for `SchengenVisaPhotoCom` before its screenshots arrived.
+**Status:** real screenshots and demo pairs are mostly in. `index.html` has a real `#demos` wall and a real `#app` screenshot grid (currently 5 screens: home, checklist, paywall, exported, languages). **Still needed: `06-saved-photos.png`** (the "All Saved Photos" grid) — drop it into `screenshots/` and add its `<figure>` back into `index.html`'s `#app` grid + the App Store campaign slide that references it. Still pending: Apple ID / App Store Connect record.
 
 ## Before submitting to App Store Connect
 
 1. Once `CanadaVisaPhoto/Info.plist`'s `AppStoreAppleID` is filled in, update the hero/footer CTA in `index.html` from "Coming soon" to a real App Store link.
-2. Capture real device screenshots into a new `screenshots/` folder (473×1024): `01-home.png`, `02-checklist.png`, `03-ready.png`, `04-paywall.png`, `05-exported.png`, `06-saved-photos.png`, `07-languages.png`.
-3. Capture real before/after export pairs into a new `demos/` folder as `demo-0N-original.jpg` / `demo-0N-result.jpg`.
-4. Once those exist: replace the `.mock-phone` illustrations in `index.html`'s `#app` section with real `<img>` screenshots, add a `#demos` before/after wall (see `VisaPhotoApps/SchengenVisaPhoto (or the live schengen.visaphoto1tap.com site)`), export the App Store campaign, and rebuild the xiaohongshu deck with real screenshots.
+2. Capture `06-saved-photos.png` (see Status above) — the last missing canonical screenshot.
+3. Re-run exports after any new screenshot lands:
+   ```bash
+   cd VisaPhotoApps/Marketing/Canada/appstore && npm run export
+   cd VisaPhotoApps/Marketing/Canada/xiaohongshu && npm run export
+   ```
 
 **Product facts baked into this site** (source: `VisaPhotoApps/docs/canada-visa-photo-spec.md`):
 - **Temporary Resident Visa** (visitor / study / work permit) photo spec — 35×45mm, 420×540 px export, same aspect/pixel minimum as Schengen.
